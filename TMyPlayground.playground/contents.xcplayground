@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios'>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
         <page name='基础部分'/>
         <page name='基本运算符'/>
@@ -11,5 +11,17 @@
         <page name='枚举'/>
         <page name='类和结构体'/>
         <page name='属性'/>
+        <page name='方法'/>
+        <page name='下标'/>
+        <page name='继承'/>
+        <page name='构造过程'/>
+        <page name='析构过程'/>
+        <page name='自动引用计数'/>
+        <page name='可选链'/>
+        <page name='错误处理'/>
+        <page name='类型转换'/>
+        <page name='嵌套类型'/>
+        <page name='拓展'/>
+        <page name='协议'/>
     </pages>
 </playground>
