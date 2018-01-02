@@ -23,5 +23,8 @@
         <page name='嵌套类型'/>
         <page name='拓展'/>
         <page name='协议'/>
+        <page name='泛型'/>
+        <page name='访问控制'/>
+        <page name='高级运算符'/>
     </pages>
 </playground>

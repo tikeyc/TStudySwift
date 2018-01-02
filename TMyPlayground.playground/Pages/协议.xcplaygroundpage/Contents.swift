@@ -343,18 +343,97 @@ game.play()
 
 
 
+/*通过扩展添加协议一致性*/
+protocol TextRepresentable {
+    var textualDescription: String { get }
+}
+//可以通过扩展，令先前提到的 Dice 类遵循并符合 TextRepresentable 协议：
+extension Dice: TextRepresentable {
+    var textualDescription: String {
+        return "A \(sides)-sided dice"
+    }
+}
 
 
 
 
+/*协议的继承
+
+协议能够继承一个或多个其他协议，可以在继承的协议的基础上增加新的要求。协议的继承语法与类的继承相似，多个被继承的协议间用逗号分隔：
+ */
+
+protocol PrettyTextRepresentable: TextRepresentable {
+    var prettyTextualDescription: String { get }
+}
+
+
+/*协议合成
+
+有时候需要同时遵循多个协议，你可以将多个协议采用 SomeProtocol & AnotherProtocol 这样的格式进行组合，称为 协议合成（protocol composition）。你可以罗列任意多个你想要遵循的协议，以与符号(&)分隔。
+
+下面的例子中，将 Named 和 Aged 两个协议按照上述语法组合成一个协议，作为函数参数的类型：
+ */
+
+protocol Named {
+    var name: String { get }
+}
+protocol Aged {
+    var age: Int { get }
+}
+struct Person1: Named, Aged {
+    var name: String
+    var age: Int
+}
+func wishHappyBirthday(to celebrator: Named & Aged) {
+    print("Happy birthday, \(celebrator.name), you're \(celebrator.age)!")
+}
+let birthdayPerson = Person1(name: "Malcolm", age: 21)
+wishHappyBirthday(to: birthdayPerson)
 
 
 
+/*
+ 可选的协议要求
+ 
+ 协议可以定义可选要求，遵循协议的类型可以选择是否实现这些要求。在协议中使用 optional 关键字作为前缀来定义可选要求。可选要求用在你需要和 Objective-C 打交道的代码中。协议和可选要求都必须带上@objc属性。标记 @objc 特性的协议只能被继承自 Objective-C 类的类或者 @objc 类遵循，其他类以及结构体和枚举均不能遵循这种协议。
+ */
+
+@objc protocol CounterDataSource {
+    @objc optional func incrementForCount(count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+}
 
 
 
+/*协议扩展
+
+协议可以通过扩展来为遵循协议的类型提供属性、方法以及下标的实现。通过这种方式，你可以基于协议本身来实现这些功能，而无需在每个遵循协议的类型中都重复同样的实现，也无需使用全局函数。
+
+例如，可以扩展 RandomNumberGenerator 协议来提供 randomBool() 方法。该方法使用协议中定义的 random() 方法来返回一个随机的 Bool 值：
+*/
+
+extension RandomNumberGenerator {
+    //提供默认实现
+    func randomBool() -> Bool {
+        return random() > 0.5
+    }
+}
 
 
+
+/*为协议扩展添加限制条件
+
+在扩展协议的时候，可以指定一些限制条件，只有遵循协议的类型满足这些限制条件时，才能获得协议扩展提供的默认实现。这些限制条件写在协议名之后，使用 where 子句来描述，正如Where子句中所描述的。
+
+例如，你可以扩展 CollectionType 协议，但是只适用于集合中的元素遵循了 TextRepresentable 协议的情况：
+ */
+
+//extension CollectionType where Generator.Element: TextRepresentable {
+//    var textualDescription: String {
+//        let itemsAsText = self.map { $0.textualDescription }
+//        return "[" + itemsAsText.joinWithSeparator(", ") + "]"
+//    }
+//}
 
 
 
