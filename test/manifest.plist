@@ -17,13 +17,13 @@
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/tikeyc/TStudySwift/blob/master/test/Icon-72-1.png</string>
+					<string>http://smisapp.gtmc.com.cn/download/ipad/Icon-72.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/tikeyc/TStudySwift/blob/master/test/Icon-144-1.png</string>
+					<string>http://smisapp.gtmc.com.cn/download/ipad/Icon-144.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
