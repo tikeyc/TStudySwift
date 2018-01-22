@@ -7,11 +7,11 @@
 	<key>manifest</key>
 	<dict>
 		<key>appURL</key>
-		<string>https://github.com/tikeyc/TStudySwift/blob/master/test/SMIS.ipa</string>
+		<string>https://raw.githubusercontent.com/tikeyc/TStudySwift/blob/master/test/SMIS.ipa</string>
 		<key>displayImageURL</key>
-		<string>https://github.com/tikeyc/TStudySwift/blob/master/test/Icon-72-1.png</string>
+		<string>https://raw.githubusercontent.com/tikeyc/TStudySwift/blob/master/test/Icon-72-1.png</string>
 		<key>fullSizeImageURL</key>
-		<string>https://github.com/tikeyc/TStudySwift/blob/master/test/Icon-144-1.png</string>
+		<string>https://raw.githubusercontent.com/tikeyc/TStudySwift/blob/master/test/Icon-144-1.png</string>
 	</dict>
 	<key>method</key>
 	<string>enterprise</string>
