@@ -231,10 +231,10 @@ class HTMLElement {
         return ""
     }
     
-    lazy var asHTML: (Void) -> String = {
+    lazy var asHTML: () -> String = {
         
-//        [unowned self] () -> String in //解决闭包的循环引用
-        [unowned self] in //或者这样写
+        [unowned self] () -> String in //解决闭包的循环引用
+//        [unowned self] in //或者这样写
         
         if let text = self.text {
             
@@ -263,7 +263,7 @@ var element: HTMLElement?
 
 element = HTMLElement.init(name: "p", text: "text")
 
-print(element?.asHTML())
+print(element?.asHTML)
 
 
 element = nil

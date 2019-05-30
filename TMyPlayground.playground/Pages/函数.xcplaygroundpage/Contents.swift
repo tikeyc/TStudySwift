@@ -154,7 +154,7 @@ func chooseStepFunction(backward: Bool) -> (Int,Int) -> Int {
         return a + b
     }
     
-    var defaultMetho = addTwoInts1
+    let defaultMetho = addTwoInts1
     
     return backward ? defaultMetho : mathFunction
 }

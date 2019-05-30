@@ -206,7 +206,7 @@ func loadImage(atPath: String) {
     
 }
 
-let photo = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
+let _ = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
 
 
 
